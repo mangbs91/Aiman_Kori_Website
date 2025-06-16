@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="project-form-container">
+  <h2>Add New Project</h2>
+  <form action="/add-project" method="POST" class="project-form">
+    <div class="form-group">
+      <label for="title">Project Title</label>
+      <input type="text" name="title" id="title" placeholder="Project Title" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Project Description</label>
+      <textarea name="description" id="description" placeholder="Describe your project..." rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="tech_stack">Tech Stack</label>
+      <input type="text" name="tech_stack" id="tech_stack" placeholder="E.g., HTML, CSS, Node.js" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="link">Project Link</label>
+      <input type="text" name="link" id="link" placeholder="https://github.com/your-project" required>
+    </div>
+    
+    <button type="submit" class="submit-btn">Add Project</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

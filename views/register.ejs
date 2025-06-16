@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+
+
+<div class="register-container">
+  <h3>Nothing to worry about , you can create a dummy account</h3>
+  <h2>Register</h2>
+  <form action="/register" method="POST" class="register-form">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

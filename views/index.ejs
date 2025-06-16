@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+
+
+
+<div class="zigzag">
+  <div class="zigzag-text">
+    <h2>About Me</h2>
+    <p>
+      I'm a full stack developer focused on building clean and functional web applications using Node.js, Express, and PostgreSQL. I’m passionate about user experience and system design.
+    </p>
+  </div>
+  <div class="zigzag-img1">
+    <img src="/images/about.jpg" alt="About Me Image" class="img-1">
+  </div>
+</div>
+
+<div class="zigzag">
+  <div class="zigzag-img">
+    <img src="/images/experience.jpg" alt="Experience Image" >
+  </div>
+  <div class="zigzag-text">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Web Developer</strong> at TechCorp (2022–Present)</li>
+      <li><strong>Intern</strong> at CodeBase (2021–2022)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="zigzag">
+  <div class="zigzag-text">
+    <h2>Projects</h2>
+    <p>Here are a few things I’ve built recently:</p>
+    <ul>
+      <li>Resume Portfolio Website</li>
+      <li>District-Based CCTV Viewer</li>
+    </ul>
+  </div>
+  <div class="zigzag-img">
+    <img src="/images/projects.jpg" alt="Projects Image">
+  </div>
+</div>
+
+<div class="zigzag">
+  <div class="zigzag-img">
+    <img src="/images/skills.jpg" alt="Skills Image">
+  </div>
+  <div class="zigzag-text">
+    <h2>Skills</h2>
+    <p>JavaScript, Node.js, PostgreSQL, HTML, CSS, EJS, Git, APIs</p>
+  </div>
+</div>
+
+<div class="contact-form">
+  <h2>Contact Me</h2>
+  <form action="/contact" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+<p class="cta">Want to see real-time Flood CCTV monitoring? <a href="/register">Create an account now!</a></p>
+
+<%- include('partials/footer') %>

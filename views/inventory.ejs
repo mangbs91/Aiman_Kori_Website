@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h2>Inventory Management</h2>
+
+  <form action="/inventory/add" method="POST">
+    <input type="text" name="name" placeholder="Item Name" required>
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <input type="number" name="price" placeholder="Price" step="0.01" required>
+    <button type="submit">Add Item</button>
+  </form>
+
+  <h3>Items List</h3>
+
+  <% if (items.length === 0) { %>
+    <p>No items found.</p>
+  <% } else { %>
+    <% items.forEach(item => { %>
+      <div class="item">
+        <div><strong><%= item.name %></strong> — Qty: <%= item.quantity %> — RM<%= item.price %></div>
+        <div class="item-actions">
+          <form action="/inventory/delete/<%= item.id %>" method="POST">
+            <button>Delete</button>
+          </form>
+
+          <form action="/inventory/update/<%= item.id %>" method="POST">
+            <input type="text" name="name" value="<%= item.name %>" required>
+            <input type="number" name="quantity" value="<%= item.quantity %>" required>
+            <input type="number" name="price" value="<%= item.price %>" step="0.01" required>
+            <button class="update">Update</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

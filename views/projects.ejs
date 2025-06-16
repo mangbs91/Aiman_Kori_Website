@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<div class="projects-container">
+  <h2>Projects</h2>
+
+  <% if (projects && projects.length > 0) { %>
+    <div class="project-grid">
+      <% projects.forEach(project => { %>
+        <div class="project-card">
+          <h3><%= project.title %></h3>
+          <p class="description"><%= project.description %></p>
+          <p><strong>Tech Stack:</strong> <%= project.tech_stack %></p>
+          <a href="<%= project.link %>" class="project-link" target="_blank">View Project</a>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p>No projects to display.</p>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<div class="form-container">
+  <h2>Edit Skill</h2>
+
+  <form action="/edit-skill/<%= skill.id %>" method="POST" class="edit-form">
+    <div class="form-group">
+      <label for="name">Skill Name</label>
+      <input type="text" id="name" name="name" value="<%= skill.name %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="level">Skill Level</label>
+      <input type="text" id="level" name="level" value="<%= skill.level || '' %>">
+    </div>
+
+    <button type="submit" class="submit-btn">Update Skill</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

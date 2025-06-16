@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="camera-container">
+  <div class="camera-image">
+    <div class="camera-title">
+      <i class="fas fa-camera"></i> KAMERA
+    </div>
+    <img src="/images/camera.jpg" alt="CCTV Camera" />
+  </div>
+
+  <div class="station-grid">
+    <% const stations = [
+      { district: "Kuala Selangor", count: 5 },
+      { district: "Sepang", count: 6 },
+      { district: "Sabak Bernam", count: 2 },
+      { district: "Hulu Langat", count: 12 },
+      { district: "Kuala Langat", count: 5 },
+      { district: "Klang", count: 16 },
+      { district: "Petaling", count: 16 },
+      { district: "Hulu Selangor", count: 6 },
+      { district: "Gombak", count: 9 },
+    ]; %>
+
+    <% stations.forEach(station => { %>
+      <a href="/cctv/<%= station.district.toUpperCase().replace(/\s+/g, '-') %>" class="station-link">
+        <div class="station-card">
+          <h4><%= station.district.toUpperCase() %></h4>
+          <button>JUMLAH STESEN <%= station.count %></button>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

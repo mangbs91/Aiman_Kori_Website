@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<div class="skill-form-container">
+  <h2>Add New Skill</h2>
+
+  <form action="/add-skill" method="POST" class="skill-form">
+    <div class="form-group">
+      <label for="name">Skill Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. JavaScript" required>
+    </div>
+
+    <div class="form-group">
+      <label for="level">Skill Level (Optional)</label>
+      <input type="text" id="level" name="level" placeholder="e.g. Beginner, Intermediate, Advanced">
+    </div>
+
+    <button type="submit" class="submit-btn">Add Skill</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

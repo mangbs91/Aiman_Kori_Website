@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="skills-container">
+  <h2 class="section-title">My Skills</h2>
+
+  <% if (skills.length > 0) { %>
+    <div class="skills-grid">
+      <% skills.forEach(skill => { %>
+        <div class="skill-card">
+          <h3><%= skill.name %></h3>
+          <p class="skill-level"><%= skill.level || '—' %></p>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p class="no-skills">No skills listed yet.</p>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

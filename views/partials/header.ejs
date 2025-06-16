@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AimanKori</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ <nav class="navbar">
+  <a href="/" class="nav-logo">My Resume</a>
+  <button class="nav-toggle" id="navToggle">&#9776;</button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/skills">Skills</a>
+    <a href="/contact">Contact</a>
+    <% if (session && session.user) { %>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/image">Camera</a>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>  
+    <% } %>
+    <div class="dropdown">
+      <button class="dropbtn">More ▾</button>
+      <div class="dropdown-content">
+        <a href="/weather">Weather</a>
+        <a href="/inventory">Inventory Management</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+  
+  
